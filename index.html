@@ -453,7 +453,7 @@ select.wa-input option{background:#0D2818;color:var(--cream);}
 
 /* ── MESSAGE / FOOTER ── */
 .message-section{text-align:center;background:radial-gradient(ellipse at center,rgba(26,61,40,0.8),rgba(6,13,8,0.98));}
-.message-box{
+.message-box{ 
   max-width:640px;margin:0 auto;padding:60px 50px;
   border:1px solid rgba(201,168,76,0.2);position:relative;
   background:rgba(13,40,24,0.4);backdrop-filter:blur(8px);
@@ -479,6 +479,24 @@ footer{
   font-family:'Amiri',serif;font-size:22px;color:var(--gold);opacity:0.5;
   display:block;margin-bottom:12px;letter-spacing:0;text-transform:none;
 }
+
+/* ── VIDEO BACKGROUND ── */
+.video-bg-wrap { position:absolute; inset:0; z-index:0; overflow:hidden; }
+.video-bg-wrap video { width:100%; height:100%; object-fit:cover; opacity:0.35; }
+.video-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,13,8,0.5) 0%, var(--dark) 100%); }
+
+/* ── TIMELINE ── */
+.timeline-section { background:radial-gradient(ellipse at center,rgba(26,61,40,0.9) 0%,rgba(6,13,8,0.98) 70%); }
+.timeline { max-width:500px; margin:40px auto 0; position:relative; padding-left:24px; border-left:1px solid var(--gold); }
+.tl-item { position:relative; margin-bottom:36px; padding-left:12px; }
+.tl-dot { position:absolute; left:-29px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 10px rgba(201,168,76,0.8); }
+.tl-content h3 { font-family:'Cinzel Decorative',cursive; color:var(--gold); font-size:16px; margin-bottom:8px; letter-spacing:1px; }
+.tl-content p { color:var(--gold-pale); font-size:15px; line-height:1.7; font-style:italic; }
+
+/* ── MEHANDI SHOUTOUT ── */
+.mehandi-shoutout { margin-top:40px; text-align:center; padding:30px; border:1px dashed rgba(201,168,76,0.5); background:rgba(201,168,76,0.05); }
+.mehandi-shoutout h3 { font-family:'Cinzel Decorative',cursive; color:var(--gold); font-size:18px; margin-bottom:10px; letter-spacing:2px; }
+.mehandi-shoutout p { color:var(--gold-pale); font-style:italic; font-size:15px; line-height:1.8; }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
@@ -572,6 +590,13 @@ footer{
 
 <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
 <section class="hero">
+  <!-- Place your 60-second highlight reel here -->
+  <div class="video-bg-wrap">
+    <video autoplay loop muted playsinline id="hero-vid">
+      <source src="engagement-highlight.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
   <svg class="mandala" viewBox="0 0 400 400" fill="none">
     <circle cx="200" cy="200" r="195" stroke="#C9A84C" stroke-width="0.5"/>
     <circle cx="200" cy="200" r="160" stroke="#C9A84C" stroke-width="0.5"/>
@@ -606,6 +631,39 @@ footer{
       <div class="divider" style="margin:28px auto"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
       <p class="verse-translation">"And of His signs is that He created for you from yourselves mates<br>that you may find tranquillity in them; and He placed between you<br>affection and mercy."</p>
       <p class="verse-ref">Surah Ar-Rum &middot; 30:21</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ OUR JOURNEY ══════════════════════════════ -->
+<section class="timeline-section">
+  <div class="wrapper">
+    <h2 class="section-title reveal">Our Journey</h2>
+    <p class="section-sub reveal">A Timeline of Love</p>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>The First Meeting</h3>
+          <p>A By the will of Allah, our paths crossed for the first time.
+             What started as a simple meeting quickly felt special — calm, comfortable, and meant to be.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>The "Yes" Moment</h3>
+          <p>The With trust in Allah’s plan, we both said yes.
+              A small word, but a big step towards a beautiful forever, written by Allah..</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <h3>The Engagement</h3>
+          <p>Alhamdulillah, with the blessings of our families, we got engaged.January 11th at S.S Convention Hall, Nellore. We exchanged rings surrounded by loved ones.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -707,22 +765,29 @@ footer{
       </div>
     </div>
     <p class="family-blessing reveal">&#x62C;&#x64E;&#x632;&#x627;&#x643;&#x64F;&#x645;&#x64F; &#x627;&#x644;&#x644;&#x647;&#x64F; &#x62E;&#x64E;&#x64A;&#x652;&#x631;&#x64B;&#x627;<br><em>May Allah reward both families abundantly<br>for raising such beautiful souls.</em></p>
+    
+    <div class="mehandi-shoutout reveal">
+      <h3>Bridal Mehandi by Mehefir</h3>
+      <p>The beautiful, intricate henna designs for the bride are lovingly crafted by her talented sister.<br>Get inspired by her art at our Mehndi Night!<br><br>
+      Visit: 🌐 <a href="https://mehefir.xyz" target="_blank" style="color: var(--gold-light); text-decoration: underline;">mehefir.xyz</a></p>
+    </div>
   </div>
 </section>
 
 <!-- ══════════════════════════════ GALLERY ══════════════════════════════ -->
 <section style="background:linear-gradient(180deg,rgba(6,13,8,0.98),rgba(13,40,24,0.95));padding:80px 20px;">
   <div class="wrapper">
-    <h2 class="section-title reveal">Our Moments</h2>
+    <h2 class="section-title reveal">Engagement Highlights</h2>
+    <p class="section-sub reveal" style="margin-bottom:30px;">January 11th &middot; S.S Convention Hall</p>
     <div class="divider reveal" style="margin:16px auto 40px;max-width:300px"><div class="divider-line"></div><div class="divider-diamond"></div><div class="divider-line"></div></div>
     <div class="reveal" style="max-width:800px;margin:0 auto;">
       <div class="gallery-grid">
-        <img src="couple1.jpg" loading="lazy" class="gallery-img" alt="Kaleem & Fiza" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%230D2818%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%22150%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23C9A84C%22 font-size=%2240%22%3E✦%3C/text%3E%3C/svg%3E'" onclick="openLightbox(this.src)">
-        <img src="couple2.jpg" loading="lazy" class="gallery-img" alt="Kaleem & Fiza" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%230D2818%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%22150%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23C9A84C%22 font-size=%2240%22%3E☽%3C/text%3E%3C/svg%3E'" onclick="openLightbox(this.src)">
-        <img src="couple3.jpg" loading="lazy" class="gallery-img" alt="Kaleem & Fiza" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%230D2818%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%22150%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23C9A84C%22 font-size=%2240%22%3E❤%3C/text%3E%3C/svg%3E'" onclick="openLightbox(this.src)">
+        <img src="engagement-story1.jpg" loading="lazy" class="gallery-img" alt="Photo Story" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%230D2818%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%22150%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23C9A84C%22 font-size=%2222%22 font-family=%22serif%22%3EPhoto Story%3C/text%3E%3C/svg%3E'" onclick="openLightbox(this.src)">
+        <img src="ring-reveal.jpg" loading="lazy" class="gallery-img" alt="The Ring Reveal" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%230D2818%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%22150%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23C9A84C%22 font-size=%2222%22 font-family=%22serif%22%3EThe Ring Reveal%3C/text%3E%3C/svg%3E'" onclick="openLightbox(this.src)">
+        <img src="engagement-story2.jpg" loading="lazy" class="gallery-img" alt="Ceremony Moments" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%230D2818%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%22150%22 y=%22155%22 text-anchor=%22middle%22 fill=%22%23C9A84C%22 font-size=%2222%22 font-family=%22serif%22%3ECeremony Moments%3C/text%3E%3C/svg%3E'" onclick="openLightbox(this.src)">
       </div>
     </div>
-    <p class="reveal" style="text-align:center;font-style:italic;color:rgba(201,168,76,0.5);font-size:13px;margin-top:20px;letter-spacing:3px;">Kaleem &amp; Fiza · 2026</p>
+    <p class="reveal" style="text-align:center;font-style:italic;color:rgba(201,168,76,0.5);font-size:13px;margin-top:20px;letter-spacing:3px;">Kaleem &amp; Fiza · Engagement Memories</p>
   </div>
 </section>
 
@@ -775,6 +840,16 @@ footer{
       </select>
       <label class="wa-label">Number of Guests</label>
       <input type="number" id="rsvp-guests" class="wa-input" placeholder="e.g. 3" min="1" max="20">
+      
+      <label class="wa-label">Song Request (Sangeet / Mehndi)</label>
+      <input type="text" id="rsvp-song" class="wa-input" placeholder="Your favorite track">
+      
+      <label class="wa-label">Need travel help for Nellore?</label>
+      <select id="rsvp-travel" class="wa-input">
+        <option value="No thanks, I'm sorted">No thanks, I'm sorted</option>
+        <option value="Yes, please help me with details">Yes, please help me with details</option>
+      </select>
+
       <button class="wa-btn" onclick="sendWhatsAppRSVP()">&#x1F4AC; &nbsp; Send RSVP via WhatsApp</button>
     </div>
 
@@ -1056,9 +1131,11 @@ function sendWhatsAppRSVP(){
   const name   = document.getElementById('rsvp-name').value.trim() || 'Guest';
   const event  = document.getElementById('rsvp-event').value || 'Events';
   const guests = document.getElementById('rsvp-guests').value || '1';
+  const song   = document.getElementById('rsvp-song').value.trim() || 'None';
+  const travel = document.getElementById('rsvp-travel').value || 'No';
   const msg = encodeURIComponent(
     `Assalamu Alaikum 🌙\n\nI would like to RSVP for Kaleem & Fiza's Wedding!\n\n` +
-    `👤 Name: ${name}\n🎉 Event: ${event}\n👥 Guests: ${guests}\n\n` +
+    `👤 Name: ${name}\n🎉 Event: ${event}\n👥 Guests: ${guests}\n🎵 Song Request: ${song}\n🚗 Travel Help: ${travel}\n\n` +
     `JazakAllah Khair for the invitation! 💛`
   );
   window.open(`https://wa.me/${activePhone}?text=${msg}`,'_blank');
