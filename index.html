@@ -493,11 +493,11 @@ footer{
 @media(max-width:680px){
   section{padding:50px 15px;}
   .hero{padding:40px 15px;}
-  .family-grid{grid-template-columns:1fr;}
-  .verse-card,.message-box{padding:40px 20px;}
+  .family-grid{grid-template-columns:1fr; gap:20px;}
+  .verse-card,.message-box{padding:30px 15px;}
   .wa-form-wrap, .wish-form-wrap{padding:24px 16px;}
   .count-sep{display:none;}
-  .countdown-grid{gap:20px;margin-top:30px;}
+  .countdown-grid{gap:15px;margin-top:30px;}
   .event-card{padding:30px 20px;}
   .intro-logo-circle{width:180px;height:180px;}
   .logo-inner-circle{width:160px;height:160px;}
@@ -508,8 +508,10 @@ footer{
   .btn-rsvp{padding:14px 30px;}
   #music-btn{top:15px;right:15px;width:40px;height:40px;}
   #lightbox span{top:15px !important;right:20px !important;}
-  .intro-btn-group{flex-direction:column; gap:12px;}
-  .intro-btn{padding:10px 30px;}
+  .intro-btn-group{flex-direction:column; gap:12px; width:80%; max-width:280px;}
+  .intro-btn{padding:14px 20px; width:100%;}
+  .gallery-grid{grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:8px;}
+  .verse-arabic{font-size: 22px; line-height: 1.6;}
 }
 </style>
 </head>
@@ -888,8 +890,9 @@ function enterSite(side){
 function burstParticles(){
   const fwCanvas2 = document.getElementById('fw-canvas');
   const cx = fwCanvas2.width/2, cy = fwCanvas2.height/2;
-  for(let i=0;i<120;i++){
-    const angle = (Math.PI*2/120)*i, spd = 3+Math.random()*6;
+  const pCount = window.innerWidth < 680 ? 60 : 120;
+  for(let i=0;i<pCount;i++){
+    const angle = (Math.PI*2/pCount)*i, spd = 3+Math.random()*6;
     fwParticles.push({
       x:cx,y:cy,
       vx:Math.cos(angle)*spd,vy:Math.sin(angle)*spd,
@@ -909,7 +912,8 @@ function burstParticles(){
 /* ── STARS ── */
 (function(){
   const c = document.getElementById('stars');
-  for(let i=0;i<140;i++){
+  const starCount = window.innerWidth < 680 ? 50 : 140;
+  for(let i=0;i<starCount;i++){
     const s = document.createElement('div');
     s.className = 'star';
     const sz = Math.random()*2.2+0.4;
@@ -978,8 +982,9 @@ resizeFw(); window.addEventListener('resize',resizeFw);
 
 function createFirework(x,y){
   const colors=['#C9A84C','#E8CC7A','#F5E9C8','#2E7D52','#ffffff','#FFD700'];
-  for(let i=0;i<90;i++){
-    const angle=(Math.PI*2/90)*i, spd=2+Math.random()*4;
+  const pCount = window.innerWidth < 680 ? 40 : 90;
+  for(let i=0;i<pCount;i++){
+    const angle=(Math.PI*2/pCount)*i, spd=2+Math.random()*4;
     fwParticles.push({
       x,y,vx:Math.cos(angle)*spd,vy:Math.sin(angle)*spd,
       alpha:1,color:colors[Math.floor(Math.random()*colors.length)],
